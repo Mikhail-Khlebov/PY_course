@@ -1,68 +1,3 @@
-# print('нам нужно ввести первое число: ')
-# a = int(input())
-# b = int(input('Введите второе число: '))
-# print(a, '+', b, '=', a + b)
-
-# c = 1.89
-# print(c)
-# print(type(c))
-# c = bool(c)
-# print(c)
-# print(type(c))
-
-# a = 5.89956
-# b = 6.556551
-# print(round(a*b, 3))
-# round(1.56566, 2)
-
-# iter = 2
-# iter += 3 # iter = iter + 3
-# iter -= 4 # iter = iter - 4
-# iter *= 5 # iter = iter * 5
-# iter /= 5 # iter = iter / 5
-# iter //= 5 # iter = iter // 5
-# iter %= 5 # iter = iter % 5
-# iter **= 5 # iter = iter ** 5
-
-# a = 1 > 4
-# print(a)
-# a = 1 < 4 and 5 > 2
-# print(a)
-# a = 1 == 2
-# print(a)
-# a = 1 != 2
-# print(a)
-# a = 'qwe'
-# b = 'qwe'
-# print(a == b)
-# a = 1 < 3 < 3 < 5 < 10
-# print (a)
-
-# username = input ('Напиши имя:')
-# if username == 'Маша':
-#     print('Ура, это МАША!')
-# elif username == 'Марина':
-#     print('Марина цветом как малина')
-# elif username == 'Гузелл':
-#     print('Гузелл возьми себе чупочупс иксиксэл')
-# else:
-#     print('Привет, ', username)
-
-# a = 'qwerty'
-# for i in a:
-#     print(i)
-# # print (a[2])
- 
-# line = ""
-# for i in range(5):
-#     line = ""
-#     for j in range(5):
-#         line += "+"
-#         print(line)
-
-# text = 'Съешь еще картофиля и сходи в туалеТ'
-# # print(len(text)) #размер страки
-# print('еще' in text) #есть ли такое значение true\false
 
 # семинар
 # задача 1
@@ -351,8 +286,8 @@ print(n)
     
 # list_2 = [randint(-5,5) for _ in range(size)]
 # print(list_2)
-# # uniqe_nums = set(list_2)
-# # print(len(uniqe_nums))
+# # uniq_symbolse_nums = set(list_2)
+# # print(len(uniq_symbolse_nums))
 # print(len(set(list_2)))
 # print(len(set([randint(-5,5) for _ in range(size)])))
 
@@ -388,25 +323,25 @@ print(n)
 # list_dicts = [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII": " S005 "}, {" V ":" S009 "},
 #               {" VIII ":" S007 "}]
 
-# unique_values = set()
+# uniq_symbolsue_values = set()
 
 # for cur_dict in list_dicts:
 #     for key in cur_dict:
-#         unique_values.add(cur_dict[key].strip())
+#         uniq_symbolsue_values.add(cur_dict[key].strip())
         
-# print(unique_values)
+# print(uniq_symbolsue_values)
 
 # # 2
 # list_dicts = [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII": " S005 "}, {" V ":" S009 "},
 #               {" VIII ":" S007 "}]
 
-# unique_values = set()
+# uniq_symbolsue_values = set()
 
 # for cur_dict in list_dicts:
 #     for key in cur_dict.keys():
-#         unique_values.add(cur_dict[key].strip())
+#         uniq_symbolsue_values.add(cur_dict[key].strip())
         
-# print(unique_values)
+# print(uniq_symbolsue_values)
 
 # Задача №23. Общее обсуждение
 # Дан массив, состоящий из целых чисел. Напишите
@@ -426,3 +361,282 @@ print(n)
 #         count += 1
 # print(count)
 
+# Напишите программу, которая принимает на вход
+# строку, и отслеживает, сколько раз каждый символ
+# уже встречался. Количество повторов добавляется к
+# символам с помощью постфикса формата _n.
+
+# Input: a a a b c a a d c d d
+# Output: a a_1 a_2 b c a_3 a_4 d c_1 d_1 d_2
+# Для решения данной задачи используйте функцию
+# .split()
+
+# text = ('a a a b c a a d c d d')
+# list_symbols = text.split()
+# print(list_symbols)
+# uniq_symbols = dict()
+# print(uniq_symbols)
+# for symbol in list_symbols:
+#     if symbol not in uniq_symbols:
+#        uniq_symbols[symbol] = 0
+#        print(symbol, end=" ")
+#     else:
+#         uniq_symbols[symbol]+=1
+#         print(f"{symbol}_{uniq_symbols[symbol]}", end=" ")
+    # print(uniq_symbols)
+
+
+# 2
+# text="a a a b c a a d c d d"
+# list_symbols=text.split()
+# print(list_symbols)
+# uniq_symbols=dict()
+# print()
+# result=""
+# for symbol in list_symbols:
+#     if symbol not in uniq_symbols:
+#         result+=f"{symbol} "
+#     else:
+#         result+=f"{symbol}_{uniq_symbols[symbol]} "
+#     uniq_symbols[symbol]=uniq_symbols.get(symbol,0)+1
+# print(result.strip())
+
+# Задача №27. Решение в группах
+# Пользователь вводит текст(строка). Словом считается
+# последовательность непробельных символов идущих
+# подряд, слова разделены одним или большим числом
+# пробелов. Определите, сколько различных слов
+# содержится в этом тексте.
+# Input: She sells sea shells on the sea shore The shells
+# that she sells are sea shells I'm sure.So if she sells sea
+# shells on the sea shore I'm sure that the shells are sea
+# shore shells
+# Output: 13
+
+# text = "She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure.So if she sells sea shells on the sea shore I'm sure that the shells are sea"
+# list_words = text.lower().split()
+# set_words = set(list_words)
+# print(len(set_words))
+# print(len(set(text.lower().split())))
+
+# Задача №29. Решение в группах
+# Ваня и Петя поспорили, кто быстрее решит
+# следующую задачу: “Задана последовательность
+# неотрицательных целых чисел. Требуется определить
+# значение наибольшего элемента
+# последовательности, которая завершается первым
+# встретившимся нулем (число 0 не входит в
+# последовательность)”. Однако 2 друга оказались не
+# такими смышлеными. Никто из ребят не смог до
+# конца сделать это задание. Они решили так: у кого
+# будет меньше ошибок в коде, тот и выиграл спор. За
+# помощью товарищи обратились к Вам, студентам.
+# Примечание: Программные коды на следующих
+# слайдах
+
+# n = int(input())
+# max_number = -1
+# while n > 0:
+#     if max_number < n:
+#         max_number = n
+#     n = int(input())
+# print(max_number)
+
+# n = int(input())
+# max_number = n
+# while n != 0:
+#     n = int(input())
+#     if max_number < n:
+#         max_number = n
+# print(max_number)
+
+# Петя:
+# n = int(input())
+# max_number = -1
+# while n > 0:                         # 1)while n < 0:
+#     if max_number < n:
+#        max_number=n                  # 3)n = max_number
+#     n = int(input())                 # 2)был на 73 строке
+# print(max_number)                    # 4) print(n)
+
+
+# n = int(input())
+# max_number = n                   # 1) некорректное число max_number = 1000 
+# while n != 0:
+#    n = int(input())
+#    if max_number < n:           # 2) max_number > n:
+#        max_number = n
+# print(max_number)
+
+# Задача №35. Общее обсуждение
+# Напишите функцию, которая принимает одно число и
+# проверяет, является ли оно простым
+# Напоминание: Простое число - это число, которое
+# имеет 2 делителя: 1 и n(само число)
+# Input: 5
+# Output: yes
+
+# def prime_num(num):
+#     if num != 2 and num % 2 == 0:
+#         return False
+#     for div in range(3,int(num ** 0.5) + 1, 2):
+#         if num % div == 0: 
+#             return False
+#     return True
+
+        
+# num=int(input("Введите число: "))
+# print(prime_num(num))
+
+# Задача №37. Решение в группах
+# 15 минут
+# Дано натуральное число N и
+# последовательность из N элементов.
+# Требуется вывести эту последовательность в
+# обратном порядке.
+# Примечание. В программе запрещается
+# объявлять массивы и использовать циклы
+# (даже для ввода и вывода).
+# Input: 2 -> 3 4
+# Output: 4 3
+
+# def revers_nums(n):
+#     if n == 0:
+#         return ' '
+#     k = int(input("Vveditte chisla:"))
+#     return f'{revers_nums(n-1)} {k}'
+    
+    
+# num = int(input("Введите числа: "))
+# print (revers_nums(num))
+
+
+# def reverse_nums(n):
+#     if n == 1:
+#         return ' '
+#     k = int(input("Введите число последовательности: "))
+#     return f'{reverse_nums(n-1)} {k}'
+
+
+# num = int(input('Введите количество чисел: '))
+# print(reverse_nums(num))
+
+# [выражение for val in коллекция]
+# [вырадение for val in коллекция if условие]
+# import random
+# a = [random.randint(-10,10) for i in range(10)]
+# print(a)
+# b = [elem+1 for elem in a]
+# print(b)
+
+# Задача №39. Решение в группах
+# Даны два массива чисел. Требуется вывести те элементы
+# первого массива (в том порядке, в каком они идут в первом
+# массиве), которых нет во втором массиве. Пользователь вводит
+# число N - количество элементов в первом массиве, затем N
+# чисел - элементы массива. Затем число M - количество
+# элементов во втором массиве. Затем элементы второго массива
+# Ввод:             Вывод:
+# 7                 3 3 2 12
+# 3 1 3 4 2 4 12
+# 6
+# 4 15 43 1 15 1    (каждое число вводится с новой строки)
+
+# from random import randint
+
+# size_1 = int(input('введите размер массива первого:'))
+# size_2 = int(input('введите размер массива второго:'))
+
+# list_1 = []
+# list_1 = [randint(0, 5) for i in range(size_1)]
+# print(list_1) 
+
+# list_2 = []
+# list_2 = [randint(0, 5) for i in range(size_2)]
+# print(list_2)  
+
+# set_2 = set(list_2)
+# for el in list_1:
+#     if el not in set_2:
+#         print(el, end= '')
+
+# Задача №41. Решение в группах
+# Дан массив, состоящий из целых чисел. Напишите
+# программу, которая в данном массиве определит
+# количество элементов, у которых два соседних и, при
+# этом, оба соседних элемента меньше данного. Сначала
+# вводится число N — количество элементов в массиве
+# Далее записаны N чисел — элементы массива. Массив
+# состоит из целых чисел.
+# Ввод:         Ввод:
+# 5             5
+# 1 2 3 4 5     1 5 1 5 1
+# Вывод:        Вывод:
+# 0             2
+
+# from random import randint
+# size_list=10
+# list_1=[randint(1,50) for _ in range(size_list)]
+# print(list_1)
+
+# count=0
+
+# for i in range(1, size_list-1):
+#     if list_1[i-1]<list_1[i]>list_1[i+1]:
+#         count+=1
+# print(count)
+
+# Задача №43. Решение в группах
+# Дан список чисел. Посчитайте, сколько в нем пар
+# элементов, равных друг другу. Считается, что любые
+# два элемента, равные друг другу образуют одну пару,
+# которую необходимо посчитать. Вводится список
+# чисел. Все числа списка находятся на разных
+# строках.
+# Ввод:         Вывод:
+# 1 2 3 2 3 2    2
+
+# from random import randint
+
+# size = int(input('введите размер массива: '))
+# list_1=[randint(0,5) for _ in range(size)]
+# print(list_1)
+
+# counter = 0
+
+# for i in range(size-1):
+#     counter += list_1[i+1:].count(list_1[i])
+# print(counter)
+
+# Задача №45. Решение в группах
+# Два различных натуральных числа n и m называются
+# дружественными, если сумма делителей числа n
+# (включая 1, но исключая само n) равна числу m и
+# наоборот. Например, 220 и 284 – дружественные числа.
+# По данному числу k выведите все пары дружественных
+# чисел, каждое из которых не превосходит k. Программа
+# получает на вход одно натуральное число k, не
+# превосходящее 105.
+# Программа должна вывести все
+# пары дружественных чисел, каждое из которых не
+# превосходит k. Пары необходимо выводить по одной в
+# строке, разделяя пробелами. Каждая пара должна быть
+# выведена только один раз (перестановка чисел новую
+# пару не дает).
+# Ввод:       Вывод:
+# 300         220 284
+
+# def div_sum(number):
+#     sum_divs = 1
+#     for i in range(2, number):
+#         if number%i == 0:
+#             sum_divs += i
+#     return sum_divs
+
+
+# size = int(input('Введите предельное число К: '))
+
+# for num_1 in range(size):
+#     for num_2 in range(size):
+#         if div_sum(num_1) == num_2 and div_sum(num_2) == num_1 and num_1 < num_2:
+#             print(num_1, num_2)
